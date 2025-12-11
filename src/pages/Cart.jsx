@@ -2,35 +2,29 @@ import { motion } from "framer-motion";
 
 export default function Cart({ cart, setCart }) {
 
-  // Miqdorni oshirish
   const increaseQty = (index) => {
     const updated = [...cart];
     updated[index].qty += 1;
     setCart(updated);
   };
 
-  // Miqdorni kamaytirish
   const decreaseQty = (index) => {
     const updated = [...cart];
     if (updated[index].qty > 1) updated[index].qty -= 1;
     setCart(updated);
   };
 
-  // Bitta itemni o‘chirish
   const removeItem = (index) => {
     setCart(cart.filter((_, i) => i !== index));
   };
 
-  // Hammasini o‘chirish
   const clearCart = () => setCart([]);
 
-  // Jami narx
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
     <div className="container">
 
-      {/* Sarlavha */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,7 +34,6 @@ export default function Cart({ cart, setCart }) {
         Shopping Cart
       </motion.h2>
 
-      {/* Clear All tugma */}
       {cart.length > 0 && (
         <motion.button
           onClick={clearCart}
@@ -62,7 +55,6 @@ export default function Cart({ cart, setCart }) {
         </motion.button>
       )}
 
-      {/* Agar bo‘sh bo‘lsa */}
       {cart.length === 0 ? (
         <motion.p
           initial={{ opacity: 0 }}
@@ -91,7 +83,6 @@ export default function Cart({ cart, setCart }) {
             }}
           >
 
-            {/* RASM */}
             <img
               src={item.img}
               alt={item.name}
@@ -103,7 +94,6 @@ export default function Cart({ cart, setCart }) {
               }}
             />
 
-            {/* MA'LUMOT */}
             <div style={{ flex: 1 }}>
               <h3 style={{ fontSize: "26px", marginBottom: "10px" }}>{item.name}</h3>
               <p style={{ fontSize: "16px", color: "#444" }}>{item.desc}</p>
@@ -116,7 +106,6 @@ export default function Cart({ cart, setCart }) {
               </p>
             </div>
 
-            {/* MIQDOR TUGMALARI */}
             <div style={{ textAlign: "center" }}>
               <button
                 onClick={() => increaseQty(i)}
@@ -153,7 +142,6 @@ export default function Cart({ cart, setCart }) {
               </button>
             </div>
 
-            {/* DELETE */}
             <motion.button
               onClick={() => removeItem(i)}
               whileHover={{ scale: 1.1 }}
@@ -174,7 +162,6 @@ export default function Cart({ cart, setCart }) {
         ))
       )}
 
-      {/* TOTAL */}
       {cart.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
