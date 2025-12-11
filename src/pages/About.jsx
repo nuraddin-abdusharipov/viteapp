@@ -25,7 +25,6 @@ export default function About() {
         </p>
       </motion.div>
 
-      {/* Team Section */}
       <h2 style={{ marginTop: "40px" }}>Our Team</h2>
 
       <div className="menu-grid">
@@ -48,7 +47,6 @@ export default function About() {
         ))}
       </div>
 
-      {/* Mission */}
       <motion.div
         className="about-box"
         style={{ marginTop: "40px" }}
