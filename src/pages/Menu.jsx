@@ -24,7 +24,6 @@ export default function Menu({ addToCart }) {
     <div className="container">
       <h2>Menu</h2>
 
-      {/* FILTER BUTTONS */}
       <div style={{ display: "flex", gap: "20px", marginBottom: "25px" }}>
         {["All", "Burger", "Pizza", "Lavash", "Somsa"].map((cat) => (
           <motion.button
@@ -46,7 +45,6 @@ export default function Menu({ addToCart }) {
         ))}
       </div>
 
-      {/* MENU ITEMS */}
       <div className="menu-grid">
         {filteredFoods.map((food, index) => (
           <motion.div
