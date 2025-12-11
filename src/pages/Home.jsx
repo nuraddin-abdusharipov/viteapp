@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
       <motion.div
         className="hero"
         initial={{ opacity: 0 }}
@@ -27,7 +26,6 @@ export default function Home() {
         </motion.p>
       </motion.div>
 
-      {/* FEATURES */}
       <div className="container">
         <h2 style={{ marginBottom: "20px" }}>Why Choose Us?</h2>
 
@@ -63,7 +61,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SPECIAL OFFERS */}
       <div className="container">
         <h2 style={{ marginBottom: "20px" }}>Special Offers</h2>
 
